@@ -27,5 +27,10 @@ public class DocumentWebController {
         return documentService.updateDocument();
     }
 
+    @DeleteMapping("")
+    public Object deleteDocument(@RequestParam("id") String id) throws IOException {
+        return documentService.deleteDocument(id);
+    }
+
 }
 

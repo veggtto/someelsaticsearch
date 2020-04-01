@@ -1,3 +1,5 @@
+
+###
 GET {{baseUrl}}/index/exits
 Accept: application/json
 
@@ -5,20 +7,26 @@ Accept: application/json
 POST {{baseUrl}}/index
 Accept: application/json
 
-###
+###查询文档
 GET {{baseUrl}}/document
 Accept: application/json
 
 
-###
+###创建文档
 POST {{baseUrl}}/document
 Accept: application/json
 
-###
+###更新文档
 PUT {{baseUrl}}/document
 Accept: application/json
 
 ###
 GET http://192.168.93.128:9200/_cluster/health
+
+###删除文档
+DELETE {{baseUrl}}/document?id=1
+Accept: application/json
+
+
 
 ###

@@ -1,5 +1,7 @@
 package com.econage.econagees.service;
 
+import org.elasticsearch.action.delete.DeleteRequest;
+import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
@@ -11,6 +13,7 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
 import org.elasticsearch.index.get.GetResult;
+import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -59,6 +62,13 @@ public class DocumentService {
         request.doc(builder);
         UpdateResponse updateResponse = restHighLevelClient.update(request, RequestOptions.DEFAULT);
         return updateResponse.getResult();
+    }
+
+    public Object deleteDocument(String id) throws IOException {
+        DeleteRequest request = new DeleteRequest("project", id);
+        DeleteResponse deleteResponse = restHighLevelClient.delete(
+                request, RequestOptions.DEFAULT);
+        return deleteResponse.getResult();
     }
 
 }
