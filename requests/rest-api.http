@@ -1,0 +1,24 @@
+GET {{baseUrl}}/index/exits
+Accept: application/json
+
+###
+POST {{baseUrl}}/index
+Accept: application/json
+
+###
+GET {{baseUrl}}/document
+Accept: application/json
+
+
+###
+POST {{baseUrl}}/document
+Accept: application/json
+
+###
+PUT {{baseUrl}}/document
+Accept: application/json
+
+###
+GET http://192.168.93.128:9200/_cluster/health
+
+###
